@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import usuario , Sensor, Lectura, Cortina
+from .models import usuario, Sensor, Lectura, Cortina
 
 class usuarioSerializer(serializers.ModelSerializer):
     class Meta:

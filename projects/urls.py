@@ -1,12 +1,21 @@
-from django.urls import path, include
-from rest_framework.routers import DefaultRouter
-from .api import  usuarioViewSet, SensorViewSet, LecturaViewSet, CortinaViewSet
+from django.urls import path
+from .views import (
+    usuarioListCreateView, usuarioDetailView,
+    SensorListCreateView, SensorDetailView,
+    LecturaListCreateView, LecturaDetailView,
+    CortinaListCreateView, CortinaDetailView
+)
 
-router = DefaultRouter()
-router.register(r'usuario', usuarioViewSet)
-router.register(r'sensores', SensorViewSet)
-router.register(r'lecturas', LecturaViewSet)
-router.register(r'cortinas', CortinaViewSet)
+urlpatterns = [
+    path('usuarios/', usuarioListCreateView.as_view(), name='usuario-list-create'),
+    path('usuarios/<int:pk>/', usuarioDetailView.as_view(), name='usuario-detail'),
+    
+    path('sensores/', SensorListCreateView.as_view(), name='sensor-list-create'),
+    path('sensores/<int:pk>/', SensorDetailView.as_view(), name='sensor-detail'),
 
-urlpatterns = router.urls
+    path('lecturas/', LecturaListCreateView.as_view(), name='lectura-list-create'),
+    path('lecturas/<int:pk>/', LecturaDetailView.as_view(), name='lectura-detail'),
 
+    path('cortinas/', CortinaListCreateView.as_view(), name='cortina-list-create'),
+    path('cortinas/<int:pk>/', CortinaDetailView.as_view(), name='cortina-detail'),
+]
