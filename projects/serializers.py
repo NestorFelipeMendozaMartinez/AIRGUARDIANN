@@ -4,8 +4,7 @@ from .models import usuario , Sensor, Lectura, Cortina
 class usuarioSerializer(serializers.ModelSerializer):
     class Meta:
         model = usuario
-        fields = ('id', 'nome', 'email', 'rol')  # Include all fields from the model
-        read_only_fields = ( 'creat_at', )  # id is automatically generated and should not be modified by the user
+        fields = '__all__'
 
 class SensorSerializer(serializers.ModelSerializer):
     class Meta:

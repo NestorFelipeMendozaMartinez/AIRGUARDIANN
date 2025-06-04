@@ -1,0 +1,17 @@
+# .gitignore para proyecto Django
+
+# Ignorar cachés de Python
+__pycache__/
+*.py[cod]
+
+# Base de datos local
+*.sqlite3
+
+# Entorno virtual
+venv/
+
+# Archivos de configuración o entorno
+*.env
+
+# Archivos de logs
+*.log
