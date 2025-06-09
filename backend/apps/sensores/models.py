@@ -1,5 +1,5 @@
 from django.db import models
-from usuarios.models import Usuario
+from apps.usuarios.models import Usuario
 
 class Sensor(models.Model):
     nombre = models.CharField(max_length=100)

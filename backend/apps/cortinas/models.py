@@ -1,5 +1,6 @@
 from django.db import models
-from sensores.models import Sensor
+from apps.sensores.models import Sensor
+
 
 class Cortina(models.Model):
     estado = models.CharField(max_length=10, choices=[('abierta', 'Abierta'), ('cerrada', 'Cerrada')])

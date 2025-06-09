@@ -1,5 +1,5 @@
 from django.db import models
-from sensores.models import Sensor
+from apps.sensores.models import Sensor
 
 class Lectura(models.Model):
     sensor = models.ForeignKey(Sensor, on_delete=models.CASCADE, related_name='lecturas')
